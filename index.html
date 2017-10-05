@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        .container {
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        img {
+            width: 500px;
+            height: 100%;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <img id="idimg" src="images/1.jpg" alt="">
+  <br>
+    <button type="button" id="btn_prev">Назад</button>
+    <button type="button" id="btn_next">Далее</button>
+	
+
+</div>
+<script>
+    var i = 0;
+
+    var btn_n = document.getElementById('btn_next');
+    var imgs = document.getElementById('idimg');
+    var btn_p = document.getElementById('btn_prev');
+
+    btn_n.onclick = function(){
+	    i++;
+		if (i > 10) {
+			i = 1;
+		}
+		imgs.src = "images/"+i+".jpg";
+    
+     };
+
+     btn_p.onclick = function(){
+	    i--;
+		if (i < 1) {
+			i = 1;
+		}
+		imgs.src = "images/"+i+".jpg";
+    }
+	
+	
+
+	var idInt = setInterval(btn_n.onclick, 2000);
+
+</script>
+
+</body>
+</html>
